@@ -14,7 +14,7 @@ import lombok.RequiredArgsConstructor;
 @Entity
 public class Ingredient {
   
-	@Id
+  @Id
   private final String id;
   private final String name;
   private final Type type;
