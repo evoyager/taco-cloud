@@ -1,4 +1,3 @@
-// tag::allButDetailProperties[]
 package tacos;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -14,10 +13,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.validation.constraints.Digits;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.CreditCardNumber;
+import org.hibernate.validator.constraints.NotBlank;
 
 import lombok.Data;
 
@@ -37,7 +36,6 @@ public class Order implements Serializable {
   @ManyToOne
   private User user;
   
-//end::allButDetailProperties[]
   @NotBlank(message="Delivery name is required")
   private String deliveryName;
   
@@ -63,14 +61,6 @@ public class Order implements Serializable {
   @Digits(integer=3, fraction=0, message="Invalid CVV")
   private String ccCVV;
 
-  /*
-  //tag::allButDetailProperties[]
-  ...
-  
-  //end::allButDetailProperties[]
-   */
-  
-//tag::allButDetailProperties[]
   @ManyToMany(targetEntity=Taco.class)
   private List<Taco> tacos = new ArrayList<>();
   
@@ -84,4 +74,3 @@ public class Order implements Serializable {
   }
   
 }
-//end::allButDetailProperties[]
